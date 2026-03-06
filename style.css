@@ -156,6 +156,88 @@
     right: 5em;  
     width: 20em
 }
+
+.projeto_js a {
+    position: absolute;
+    top: 13em;
+    right: 25.5em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+    border-style: solid;
+    border-color:rgb(255, 115, 33) ;
+    border-width: 10px;
+    padding: 12px;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    box-shadow: 10px 10px white;
+}
+    
+/*projetojs*/
+.f_js {
+    background-image: url("Imagens/Galaxias1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.calc a {
+    position: absolute;
+    top:6em;
+    left:3em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+
+}
+/*calculadora*/
+.f_calc {
+    background-image: url("Imagens/Galaxias1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.calcesp {
+    position: absolute;
+    top: 3em;
+    right: 26.5em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+}
+.but1 {
+    position: absolute;
+    top: 13em;
+    left: 50em;
+}
+.but2 {
+    position: absolute;
+    top: 17em;
+    left: 50em;
+}
+.but3 {
+    position: absolute;
+    top: 24em;
+    left: 50em;
+}
+.butmais {
+    position: absolute;
+    top: 20.5em;
+    left: 50.5em;
+}
+.butmenos {
+    position: absolute;
+    top: 20.5em;
+    left: 53.5em;
+}
+.butmul {
+    position: absolute;
+    top: 20.5em;
+    left: 56.5em;
+}
+.butdivi {
+    position: absolute;
+    top: 20.5em;
+    left: 60em;
+}
+
 /*botao do inicio*/
 .ini a {
     position: absolute;

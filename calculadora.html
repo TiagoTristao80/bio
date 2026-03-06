@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" />         
+        <title> Calculadora </title>
+    </head>
+    <body class="f_calc">
+        <h2 class="calcesp">
+            Calculadora Espacial
+        </h2>
+        <input class="but1" type="text" name="valor1"/>
+        <br />
+        <p id="sinal"></p>
+        <br />
+        <input class="but2" type="text" name="valor2"/>
+        <br />
+        <button class ="butmais" onclick="soma()">+</button>
+        <button class ="butmenos"onclick="sub()">-</button>
+        <button class ="butmul"onclick="mult()">×</button>
+        <button class ="butdivi"onclick="divi()">÷</button>
+        <br />
+        <input class="but3" type="text" name="resul" readonly/>
+        <h2 class="ini"><a href="index.html">    
+                Início
+                </a> 
+            </h2>
+
+        <script>
+            function soma() {
+                document.getElementById("sinal").innerHTML = "+"
+                let valor = Vals()
+                let resul = document.getElementsByName("resul")[0]
+                resul.value = Number(valor.valor1) + Number(valor.valor2)
+            }
+            function sub() {
+                document.getElementById("sinal").innerHTML = "-"
+                let valor = Vals()
+                let resul = document.getElementsByName("resul")[0]
+                resul.value = Number(valor.valor1) - Number(valor.valor2)
+            }
+            function mult() {
+                document.getElementById("sinal").innerHTML = "×"
+                let valor = Vals()
+                let resul = document.getElementsByName("resul")[0]
+                resul.value = Number(valor.valor1) * Number(valor.valor2)
+            }
+            function divi() {
+                document.getElementById("sinal").innerHTML = "÷"
+                let valor = Vals()
+                let resul = document.getElementsByName("resul")[0]
+                resul.value = Number(valor.valor1) / Number(valor.valor2)
+            }
+            function Vals() {
+                return {
+                    valor1: document.getElementsByName("valor1")[0].value,
+                    valor2: document.getElementsByName("valor2")[0].value
+                }
+            }
+        </script>
+    </body>
+</html>
