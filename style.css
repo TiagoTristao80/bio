@@ -237,6 +237,13 @@
     top: 20.5em;
     left: 60em;
 }
+.sinalcalc {
+    position: absolute;
+    top: 11.4em;
+    left: 46.5em;
+    color: white;
+    font-family: "space"; 
+}
 
 /*botao do inicio*/
 .ini a {
