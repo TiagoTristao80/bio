@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" />
+        <title>Jogo do Adivinha</title>
+    </head>
+    <body class="f_adivinha">
+        <h2 class="titulo">
+            Estou a pensar num número de 0 a 100, tenta adivinhar!
+        </h2>
+        <input class="but1_adivinha" type="text" name="n_ad" max="100" min="0"/> 
+        <button class ="but2_adivinha" onclick=Verificar()>Adivinhar</button>
+        <p class="mensagem_adivinha" id="mensagem"></p>
+        <h2 class="ini"><a href="index.html">    
+                Início
+                </a></h2>
+        <img class ="confettis" id="conffetis" src="Imagens/9ca21edc-3316-4352-8634-01d19941c646.gif" style="display:none"> 
+        <img class ="sinal_maior" id="sinal_maior" src="Imagens/pngwingmaior.com.png" style="display:none">
+        <img class ="sinal_menor" id="sinal_menor" src="Imagens/pngwingmenor.com.png" style="display:none">
+        <script>
+            let n_sorte = Math.floor(Math.random() * 100)
+            let resposta = document.getElementById("mensagem")
+            let audio = new Audio("Sons/freesound_community-tada-fanfare-a-6313.mp3")
+            audio.loop = true
+
+            function Verificar() {
+                let n_ad = document.getElementsByName("n_ad")[0].value
+                if (n_ad == n_sorte) {
+                    document.getElementById("mensagem").innerHTML = "Parabéns. Acertaste!!"
+                    document.getElementById("conffetis").style.display = "block"
+                    document.getElementById("sinal_maior").style.display = "none"
+                    document.getElementById("sinal_menor").style.display = "none"
+                    audio.play()
+                }
+                else if (n_ad > 100) {
+                    document.getElementById("mensagem").innerHTML = "O número é apenas entre 0 e 100"
+                    document.getElementById("conffetis").style.display = "none"
+                    document.getElementById("sinal_maior").style.display = "none"
+                    document.getElementById("sinal_menor").style.display = "block"
+                    audio.pause()
+                }
+                else if (n_ad < 0) {
+                    document.getElementById("mensagem").innerHTML = "O número é apenas entre 0 e 100"
+                    document.getElementById("conffetis").style.display = "none"
+                    document.getElementById("sinal_maior").style.display = "block"
+                    document.getElementById("sinal_menor").style.display = "none"
+                    audio.pause()
+                }
+                else if (n_ad < n_sorte) {
+                    document.getElementById("mensagem").innerHTML = "Erraste. O número é maior!"
+                    document.getElementById("conffetis").style.display = "none"
+                    document.getElementById("sinal_maior").style.display = "block"
+                    document.getElementById("sinal_menor").style.display = "none"
+                    audio.pause()
+                }
+                else {
+                    document.getElementById("mensagem").innerHTML = "Erraste. O número é menor!"
+                    document.getElementById("conffetis").style.display = "none"
+                    document.getElementById("sinal_maior").style.display = "none"
+                    document.getElementById("sinal_menor").style.display = "block"
+                    audio.pause()
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -202,17 +202,17 @@
     font-family: "space" ;
     text-decoration: none;
 }
-.but1 {
+.but1_calc {
     position: absolute;
     top: 13em;
     left: 50em;
 }
-.but2 {
+.but2_calc {
     position: absolute;
     top: 17em;
     left: 50em;
 }
-.but3 {
+.but3_calc {
     position: absolute;
     top: 24em;
     left: 50em;
@@ -244,7 +244,54 @@
     color: white;
     font-family: "space"; 
 }
-
+/*Adivinha*/
+.f_adivinha {
+    background-image: url("Imagens/Galaxias1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.titulo {
+    position: absolute;
+    top: 3.5em;
+    right: 15em;
+    color:white;
+    font-family: "space" ;
+}
+.but1_adivinha {
+    position: absolute;
+    top: 13em;
+    right: 53em;
+}
+.but2_adivinha {
+    position: absolute;
+    top: 15em;
+    right: 57em;
+}
+.mensagem_adivinha {
+    position: absolute;
+    top: 14em;
+    right: 41em;
+    color:white;
+    font-family: "space" ;
+}
+.confettis {
+    position: absolute;
+    top: -6em;
+    right: 20em;
+    width: 60em;
+}
+.sinal_maior {
+    position: absolute;
+    top: 15em;
+    right: 38em;
+    width: 20em;
+}
+.sinal_menor {
+    position: absolute;
+    top: 15em;
+    right: 38em;
+    width: 20em;
+}
 /*botao do inicio*/
 .ini a {
     position: absolute;
