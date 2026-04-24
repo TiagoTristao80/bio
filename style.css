@@ -186,7 +186,14 @@
     color:white;
     font-family: "space" ;
     text-decoration: none;
-
+}
+.adivinha a {
+    position: absolute;
+    top:8.5em;
+    left:3em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
 }
 /*calculadora*/
 .f_calc {
@@ -259,13 +266,18 @@
 }
 .but1_adivinha {
     position: absolute;
-    top: 13em;
-    right: 53em;
+    top: 11.5em;
+    right: 56em;
 }
 .but2_adivinha {
     position: absolute;
-    top: 15em;
-    right: 57em;
+    top: 13.7em;
+    right: 56em;
+}
+.but3_adivinha {
+    position: absolute;
+    top: 15.9em;
+    right: 56.7em;
 }
 .mensagem_adivinha {
     position: absolute;
@@ -279,18 +291,22 @@
     top: -6em;
     right: 20em;
     width: 60em;
+    display:none;
+    z-index:-1;
 }
 .sinal_maior {
     position: absolute;
     top: 15em;
     right: 38em;
     width: 20em;
+    display:none;
 }
 .sinal_menor {
     position: absolute;
     top: 15em;
     right: 38em;
     width: 20em;
+    display:none;
 }
 /*botao do inicio*/
 .ini a {
