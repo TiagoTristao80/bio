@@ -28,12 +28,12 @@ export const statuses = {
 
 const nave = {
     sprite: {
-        nave: "/Imagens/foguete.png",
-        explosao: "/Imagens/foguete_explosao.png",
-        landed: "/Imagens/foguete_landed.png",
-        up: "/Imagens/foguete_up.png",
-        left: "/Imagens/foguete_right.png",
-        right: "/Imagens/foguete_left.png",
+        nave: "../Imagens/foguete.png",
+        explosao: "../Imagens/foguete_explosao.png",
+        landed: "../Imagens/foguete_landed.png",
+        up: "../Imagens/foguete_up.png",
+        left: "../Imagens/foguete_right.png",
+        right: "../Imagens/foguete_left.png",
     },
     image: {
         nave: null,
