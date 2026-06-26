@@ -1,0 +1,133 @@
+import globals from './globals.js'
+import { terrain } from './terreno.js'
+
+const ctx = globals.ctx
+const width = globals.width
+
+const gravity = 1
+const thruster_up = 2
+const thruster_left = 3
+const thruster_right = 3
+const maxMomentumX = 8
+
+const NORMAL = 1
+const LANDED = 0
+const COLISION = -1
+const UP = 2
+const LEFT = 3
+const RIGHT = 4
+
+export const statuses = {
+    NORMAL: NORMAL,
+    LANDED: LANDED,
+    COLISION: COLISION,
+    UP: UP,
+    LEFT: LEFT,
+    RIGHT: RIGHT,
+}
+
+const nave = {
+    sprite: {
+        nave: "/Imagens/foguete.png",
+        explosao: "/Imagens/foguete_explosao.png",
+        landed: "/Imagens/foguete_landed.png",
+        up: "/Imagens/foguete_up.png",
+        left: "/Imagens/foguete_right.png",
+        right: "/Imagens/foguete_left.png",
+    },
+    image: {
+        nave: null,
+        explosao: null,
+        landed: null,
+        up: null,
+        left: null,
+        right: null,
+    },
+    ship: null,
+    width: 50,
+    height: 104,
+    posx: 0,
+    posy: 0,
+    momentumx: 0,
+    momentumy: 0,
+    status: NORMAL,
+    setStatus: (status) => {
+        switch (status) {
+            case COLISION:
+                nave.ship = nave.image.explosao
+                break
+            case LANDED:
+                nave.ship = nave.image.landed
+                break
+            case UP:
+                nave.ship = nave.image.up
+                nave.momentumy -= thruster_up
+                break
+            case LEFT:
+                nave.ship = nave.image.left
+                nave.momentumx = Math.max(nave.momentumx - thruster_left, -maxMomentumX)
+                break
+            case RIGHT:
+                nave.ship = nave.image.right
+                nave.momentumx = Math.min(nave.momentumx + thruster_right, maxMomentumX)
+                break
+            case NORMAL:
+                nave.ship = nave.image.nave
+                break
+            default:
+                break
+        }
+        nave.status = status
+    },
+    bottom: () => {
+        return nave.posy + nave.height
+    }, 
+    middle: () => {
+        return nave.posx + nave.width / 2
+    },
+    draw: () => {
+        ctx.drawImage(nave.ship, nave.posx, nave.posy, nave.width, nave.height)
+    },
+    react: () => {
+        if (nave.status === COLISION || nave.status === LANDED) return
+        // clear canvas
+        ctx.clearRect(nave.posx, nave.posy, nave.width, nave.height)
+        // calculate new position
+        nave.momentumy += gravity
+        nave.posy += nave.momentumy
+        nave.posx += nave.momentumx
+        nave.momentumx *= 0.94
+        if (Math.abs(nave.momentumx) < 0.1) nave.momentumx = 0
+        const minX = 0
+        const maxX = globals.width - nave.width
+        if (nave.posx < minX) {
+            nave.posx = minX
+            nave.momentumx = 0
+        } else if (nave.posx > maxX) {
+            nave.posx = maxX
+            nave.momentumx = 0
+        }
+        // check for landing
+        const landed = terrain.checkLanded(nave.middle(), nave.bottom())
+        if (landed) {
+            nave.posy = landed - nave.height
+            nave.setStatus(LANDED)
+            console.log('LANDED ' + landed)
+        } else {
+            // check for a colision
+            const colision = terrain.checkColision(nave.middle(), nave.bottom())
+            if (colision) {
+                nave.posy = colision - nave.height
+                nave.setStatus(COLISION)
+                console.log('COLISION ' + colision)
+            } 
+        }
+        // redraw
+        nave.draw()
+    }
+}
+nave.posx = (width / 2) - (nave.width / 2)
+
+export default {
+    nave: nave
+}

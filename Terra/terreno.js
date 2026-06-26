@@ -144,13 +144,13 @@ export function drawTerrain(breaks) {
     ctx.lineTo(0, height)
     ctx.closePath()
     ctx.stroke()
-    ctx.fillStyle = 'lightgrey'
+    ctx.fillStyle = 'lightblue'
     ctx.fill()
 
     // draw landing segments
     ctx.beginPath()
-    ctx.strokeStyle = 'yellow'
-    ctx.lineWidth = 4;
+    ctx.strokeStyle = 'lightgreen'
+    ctx.lineWidth = 5;
     terrain.segments.forEach(segment => {
         if (segment.landing) {
             // draw landing segment

@@ -6,7 +6,7 @@ const nave = spaceship.nave
 
 function mainLoop() {
     nave.react() 
-    setTimeout(mainLoop, 150);
+    setTimeout(mainLoop, 125);
 }
 
 init().then( () => {

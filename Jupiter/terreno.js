@@ -144,7 +144,7 @@ export function drawTerrain(breaks) {
     ctx.lineTo(0, height)
     ctx.closePath()
     ctx.stroke()
-    ctx.fillStyle = 'lightgrey'
+    ctx.fillStyle = '#AD6242'
     ctx.fill()
 
     // draw landing segments

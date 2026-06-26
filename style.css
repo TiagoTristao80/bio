@@ -402,21 +402,94 @@
     font-family: space;
     color: white;
 }
-/*spaceship lander*/
+/*spaceship lander menu*/
 .f_spl {
-    background-imagee: url("Imagens/Galaxias2.jpg");
+    background-image: url("Imagens/Galaxias2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+.spl_menu_lua a{
+    position: absolute;
+    top: 10em;
+    left: 13em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+    font-size: 1.3em ;
+    text-decoration: none;
+}
+.spl_menu_marte a{
+    position: absolute;
+    top: 10.2em;
+    left: 28em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+    font-size: 1.3em ;
+}
+.spl_menu_terra a{
+    position: absolute;
+    top: 10.2em;
+    left: 43em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+    font-size: 1.3em ;
+}
+.spl_menu_neptuno a{
+    position: absolute;
+    top: 20em;
+    left: 19em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+    font-size: 1.3em ;
+}
+.spl_menu_jupiter a{
+    position: absolute;
+    top: 20em;
+    left: 35em;
+    color:white;
+    font-family: "space" ;
+    text-decoration: none;
+    font-size: 1.3em ;
+}
+.spl_menu_img_L {
+    position: absolute;
+    top: -5em;
+    left: -4em;
+    width: 10em;
+}
+.spl_menu_img_M {
+    position: absolute;
+    top: -5em;
+    left: -3.5em;
+    width: 10em;
+}
+.spl_menu_img_T {
+    position: absolute;
+    top: -5em;
+    left: -4.5em;
+    width: 12em;
+}
+.spl_menu_img_N {
+    position: absolute;
+    top: -5em;
+    left: -3em;
+    width: 10em;
+}
+.spl_menu_img_J {
+    position: absolute;
+    top: -5em;
+    left: -3em;
+    width: 10em;
 }
 /*--Lua--*/
 .canvas_lua {
     border: 1px solid #000000;
     display: block;
     margin: auto;
-    width: 60em;
-    position: absolute;
-    top: 5px;
-    right: 19em;
+    width: 60em; 
 }
 .f_spl_l {
     background-image: url("Imagens/Galaxias2.jpg");
